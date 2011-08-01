@@ -1,6 +1,6 @@
 require 'toto'
 
-@config = Toto::Config::Defaults
+@config = Toto::Config::Defaults.merge(:ext => "md")
 
 task :default => :new
 
