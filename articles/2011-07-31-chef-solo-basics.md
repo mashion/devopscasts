@@ -11,10 +11,12 @@ Welcome to our first episode! In this episode we'll cover the basics you'll need
 
 # Prep
 
-1. start virtual box
-2. open ubuntu vm, don't start it
-3. start redcar
-4. open slides
+1. Prep virtualbox VM: get IP and upload keys, then shutdown
+2. Remove ~/.chef/knife.rb
+3. Switch to empty gemset
+4. start redcar
+5. open chrome to github.com/opscode/cookbooks
+6. open slides
 
 # Script
 
@@ -58,7 +60,7 @@ Now to demonstrate Chef solo I'll need a machine to configure. So I've prepared 
 
     $ gem install knife-solo
 
-Knife solo is based on chef's own knife helper tool. It gives you a few extra commands that make working with chef solo a bit easier. If this is the first time you're using knife, you'll need to generate a configuration file.
+Knife solo is based on chef's own knife helper tool. It gives you a few extra commands that make working with chef solo a bit easier. If this is the first time you're using chef, the install make take a bit of time since it will also install the chef gem. You'll need to generate a configuration file.
 
     $ knife configure -r . --defaults
 
@@ -76,17 +78,17 @@ Often you can find cookbooks for various packages online. Opscode, the company t
 
 (terminal)
 
-Today we'll keep things simple and just install a redis server. We could use the opcode cookbook, but we'll make one from scratch to get some practice working with cookbooks.
+Today we'll keep things simple and just install a nginx server. We could use the opcode cookbook, but we'll make one from scratch to get some practice working with cookbooks.
 
 To create a cookbook, use the knife cookbook command.
 
-    $ knife cookbook create redis -o cookbooks
+    $ knife cookbook create nginx -o cookbooks
 
-We specify the name of the cookbook, redis. And use the -o option to tell knife to store it in the cookbooks directory. Each cookbook contains a default recipe. We'll use this recipe to install and start the redis server.
+We specify the name of the cookbook, nginx. And use the -o option to tell knife to store it in the cookbooks directory. Each cookbook contains a default recipe. We'll use this recipe to install and start the nginx server.
 
-(redcar: cookbooks/redis/recipes/default.rb)
+(redcar: cookbooks/nginx/recipes/default.rb)
 
-Chef uses a Ruby DSL to define recipes. To install redis from the ubuntu package we use the package resource. Then to ensure that redis is started on every boot, we use the service resource. Since redis comes with a regular SysV control script, we'll tell chef that it supports restart and status. This tells chef to use the SysV script rather than trying to inspect the process table to check if redis is running or not.
+Chef uses a Ruby DSL to define recipes. To install nginx from the ubuntu package we use the package resource. Then to ensure that nginx is started now and on every boot, we use the service resource. Since nginx comes with a regular SysV control script, we'll tell chef that it supports restart and status. This tells chef to use the SysV script rather than trying to inspect the process table to check if nginx is running or not.
 
 (terminal)
 
@@ -98,16 +100,16 @@ To do that we run knife prepare. This is a knife-solo command that will install 
 
 (redcar: nodes/ip.json)
 
-This file is what tells chef which recipes should run on a given host. To include the redis recipe we just wrote, we add `recipe[redis]` to the run list.
+This file is what tells chef which recipes should run on a given host. To include the nginx recipe we just wrote, we add `recipe[nginx]` to the run list.
 
 (terminal)
 
     $ knife cook ubuntu@ip
 
-Now to install redis on our VM using chef solo we run the knife cook command. This will copy our cookbooks over to the VM and run chef solo using the node configuration that matches the IP of the box.
+Now to install nginx on our VM using chef solo we run the knife cook command. This will copy our cookbooks over to the VM and run chef solo using the node configuration that matches the IP of the box.
 
-    $ redis-cli -h ip
+(chrome: ip)
 
-And now let's use the redis CLI to make sure we can use our new redis server.
+And now if we open a browser to the VM's IP. We'll get a nice welcome message.
 
 And that's it! We'll go over more of the details in upcoming sceencasts, but hopefully this is enough to get you started exploring chef for your own servers. Thanks for watching!
