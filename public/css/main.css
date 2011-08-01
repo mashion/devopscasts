@@ -8,13 +8,18 @@ body {
   line-height: 30px;
   padding: 15px;
   width: 720px;
-
 }
 header, footer, section, article {
   display: block;
 }
 .logo {
   font-family: 'SixEightZeroNineChargen-Regular';
+  font-size: 50px;
+  margin: 30px 0;
+}
+.logo a, .logo a:hover {
+  color: black;
+  text-decoration: none;
 }
 #content {
 }
@@ -32,6 +37,7 @@ header, footer, section, article {
   color: #b53131;
 }
 .date {
+  color: #888;
   font-style: italic;
   float: right;
   line-height: 43px;
@@ -88,7 +94,7 @@ h1, h2, h3, h4 {
   margin: 0;
   font-weight: 600;
 }
-ul, li {
+ul, ul > li {
   list-style-type: none;
 }
 code {
