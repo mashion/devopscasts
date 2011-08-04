@@ -11,6 +11,7 @@ end
 toto = Toto::Server.new do
   set :author,    'Mat Schaffer'
   set :title,     'DevOpsCasts'
+  set :url,       'http://devops.mashion.net'
   set :disqus,    'devopscasts'
   set :ext,       'md'
   set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
