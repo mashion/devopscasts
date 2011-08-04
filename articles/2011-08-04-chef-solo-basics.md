@@ -1,7 +1,7 @@
 ---
 episode: 1
 title: Chef Solo Basics
-date: 31/07/2011
+date: 04/08/2011
 
 Welcome to our first episode! In this episode we'll cover the basics you'll need to get started with Chef Solo.
 
