@@ -7,6 +7,8 @@ Welcome to our first episode! In this episode we'll cover the basics you'll need
 
 <iframe width="425" height="349" src="http://www.youtube.com/embed/1G6bd4b91RU" frameborder="0" allowfullscreen></iframe>
 
+**Update:** I forgot to add the link overlays so here's my [blog post](http://matschaffer.com/2011/06/minimal-ubuntu-virtualbox/) on setting up an Ubuntu VM and a [pre-made image](https://s3.amazonaws.com/mashion/Ubuntu64Base.ova) that should work for testing. The username/password is ubuntu/ubuntu&#x2e;
+
 ~
 
 # Prep
