@@ -15,6 +15,7 @@ toto = Toto::Server.new do
   set :disqus,    'devopscasts'
   set :ext,       'md'
   set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
+  set :feed,      'http://feeds.feedburner.com/devopscasts'
 
   # set :root,      "index"                                   # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles

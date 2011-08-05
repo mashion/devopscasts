@@ -113,3 +113,10 @@ body > footer {
   font-size: 10px;
   color: #888;
 }
+.feed {
+  float: right;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-top: 20px;
+}
