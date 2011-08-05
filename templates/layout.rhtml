@@ -5,6 +5,9 @@
     <link rel="alternate" type="application/atom+xml" title="<%= title %>" href="<%= @config[:feed] %>" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title><%= title %></title>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
       <a class="feed" href="<%= @config[:feed] %>" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="" style="border:0"/></a>
