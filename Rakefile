@@ -40,3 +40,12 @@ def ask message
   STDIN.gets.chomp
 end
 
+require './virtualbox_ext'
+
+VirtualBox.define_rake_tasks(
+  :hosts => { :vm => { :name => ENV['NAME'] } },
+  :image => "#{ENV['HOME']}/Desktop/Not Backed Up/OS/VBox Images/Ubuntu64Base.ova"
+)
+
+desc "Make a VM with the given NAME"
+task :vm => 'virtualbox:info'
