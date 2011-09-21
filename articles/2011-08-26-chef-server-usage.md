@@ -1,11 +1,11 @@
 ---
 episode: 3
 title: Chef Server Usage
-date: 26/08/2011
+date: 20/09/2011
 
 Welcome back! Sorry for delay in getting this episode out. I'm currently on vacation overseas so it's taken a bit more time to prepare everything.
 
-In todays episode we'll go over how to upload cookbooks to your Chef Server as well as connect and provision a node (app server). This episode is a continuation of our [last episode](/2011/08/19/chef-server-installation) so you'll want to follow along with that before trying out this one.
+In todays episode we'll go over how to upload cookbooks to your Chef Server as well as connect and provision a node. This episode is a continuation of our [last episode](/2011/08/19/chef-server-installation) so you'll want to follow along with that before trying out this one.
 
 <iframe width="425" height="349" src="http://www.youtube.com/embed/g_s8UFFowXI" frameborder="0" allowfullscreen></iframe>
 
