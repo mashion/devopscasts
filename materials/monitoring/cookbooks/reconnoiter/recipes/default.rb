@@ -36,8 +36,8 @@ end
 
 git "/usr/local/src/reconnoiter" do
   repository "git://github.com/omniti-labs/reconnoiter.git"
-  # master as of Fri Sep 30 03:56:25 UTC 2011
-  reference "623e0ea7c0460f481fea40517710c30ab62914fc"
+  # master as of Sun Oct 30 22:11:07 UTC 2011
+  reference "0123ccfecf3ddefa9fa80e0755a40090b06cf976"
   action :sync
 end
 
