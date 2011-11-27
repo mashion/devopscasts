@@ -2,6 +2,9 @@ require 'bundler'
 Bundler.require
 
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
+use Rack::Rewrite do
+  r302 '/chef-install', '/2011/08/19/chef-server-installation/'
+end
 use Rack::CommonLogger
 
 if ENV['RACK_ENV'] == 'development'
