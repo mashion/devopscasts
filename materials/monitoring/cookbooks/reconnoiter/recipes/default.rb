@@ -52,3 +52,5 @@ bash "build and install reconnoiter" do
   action :nothing
   subscribes :run, resources("git[/usr/local/src/reconnoiter]"), :immediately
 end
+
+include_recipe "reconnoiter::database"
