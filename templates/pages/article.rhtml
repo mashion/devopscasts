@@ -1,6 +1,6 @@
 <article class="post">
   <header>
-    <h1>Episode <%= episode %>: <%= title %></h1>
+    <h1><% if episode %>Episode <%= episode %>: <% end %><%= title %></h1>
     <span class="date"><%= date %></span>
   </header>
 
