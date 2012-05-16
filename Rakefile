@@ -4,6 +4,11 @@ require 'toto'
 
 task :default => :new
 
+desc "Run the server"
+task :serve do
+  exec "bundle exec shotgun"
+end
+
 desc "Create a new article."
 task :new do
   title = ask('Title: ')
@@ -39,13 +44,3 @@ def ask message
   print message
   STDIN.gets.chomp
 end
-
-require './virtualbox_ext'
-
-VirtualBox.define_rake_tasks(
-  :hosts => { :vm => { :name => ENV['NAME'] } },
-  :image => "#{ENV['HOME']}/Desktop/Not Backed Up/OS/VBox Images/Ubuntu64Base.ova"
-)
-
-desc "Make a VM with the given NAME"
-task :vm => 'virtualbox:info'

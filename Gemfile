@@ -8,5 +8,4 @@ gem 'rack-rewrite', :require => 'rack/rewrite'
 group :development do
   gem 'rake'
   gem 'shotgun'
-  gem 'virtualbox'
 end
